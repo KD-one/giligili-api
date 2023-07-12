@@ -47,11 +47,7 @@ func UpdateVideo(c *gin.Context) {
 
 func DeleteVideo(c *gin.Context) {
 	s := service.DeleteVideoService{}
-	err := c.ShouldBind(&s)
-	if err != nil {
-		c.JSON(400, ErrorResponse(err))
-	} else {
-		res := s.Delete(c.Param("id"))
-		c.JSON(200, res)
-	}
+	res := s.Delete(c.Param("id"))
+	c.JSON(200, res)
+
 }
