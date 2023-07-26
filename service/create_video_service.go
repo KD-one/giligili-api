@@ -11,7 +11,6 @@ type CreateVideoService struct {
 	Info  string `form:"info" json:"info" binding:"required,min=0,max=9999"`
 }
 
-// setSession 设置session
 func (service *CreateVideoService) Create() serializer.Response {
 	video := model.Video{
 		Title: service.Title,
